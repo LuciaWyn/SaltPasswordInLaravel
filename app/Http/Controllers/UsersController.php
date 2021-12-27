@@ -9,6 +9,9 @@ use App\Models\User;
 
 class UsersController extends Controller
 { 
+    public function login(){
+        dd('here');
+    }
     public function newuser(Request $request){
         $credentials = $request->validate([
             'email' => ['required', 'email', 'unique:users'],

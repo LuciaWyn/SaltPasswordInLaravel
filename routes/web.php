@@ -16,8 +16,11 @@ use App\Http\Controllers\UsersController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/login', [UsersController::class, 'login']);
+Route::get('/login', [UsersController::class, 'login'])->name('login');
 Route::get('/signup', function(){
     return view('users.signup');
 });
 Route::post('/signup', [UsersController::class, 'newuser']);
+Route::get('/here', function(){
+    dd('here');
+})->middleware('auth');
